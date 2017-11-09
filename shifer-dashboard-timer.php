@@ -17,7 +17,7 @@ function notice_shifer_dashboard_timer() {
   if ( $shifter_uptime > 150 ) {
 ?>
 <div class="error"><ul>
-Notice: <?php echo $shifter_uptime ?> minutes have passed since you started Dashboard. The period of continuous use is 180 minutes.
+Shifter Waring: <?php echo $shifter_uptime ?> minutes have passed since you started Dashboard. The period of continuous use is 180 minutes.
 </ul></div>
 <?php
 }}
