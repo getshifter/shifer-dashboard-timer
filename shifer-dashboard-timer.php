@@ -3,7 +3,7 @@
 Plugin Name: Shifer DashBoard Timer
 Plugin URI:
 Description: Notice before terminate
-Version: 1.0.0
+Version: 1.1.0
 Author: Shifter Team
 Author URI: https://github.com/getshifter
 License: GPL2
@@ -11,13 +11,20 @@ License: GPL2
 
 function notice_shifer_dashboard_timer() {
   $bootup_filename = '../.bootup';
+  $hard_limit = 180;
   if (file_exists($bootup_filename)) {
   $unixtime = file_get_contents($bootup_filename, true);
-  $shifter_uptime = round((time() - $unixtime) / 60);
-  if ( $shifter_uptime > 150 ) {
+  $shifter_remain = $hard_limit - round((time() - $unixtime) / 60);
+  if ( $shifter_remain < 3 ) {
 ?>
 <div class="error"><ul>
-Shifter Waring: <?php echo $shifter_uptime ?> minutes have passed since you started Dashboard. The period of continuous use is 180 minutes.
+Notice: Shifter will power down WordPress in few minutes. Please restart your from the Shifter Dashboard.
+</ul></div>
+<?php
+  } elseif ( $shifter_remain < 30 ) {
+?>
+<div class="error"><ul>
+Notice: Shifter will power down WordPress in <?php echo $shifter_remain ?> minutes. Please restart your from the Shifter Dashboard.
 </ul></div>
 <?php
 }}
