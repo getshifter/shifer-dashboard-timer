@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Shifter Dashboard Timer
-Plugin URI:
-Description: Notice before terminate
+Plugin URI: https://github.com/getshifter/shifter-dashboard-timer
+Description: Notice before terminating Shifter Container
 Version: 1.1.0
 Author: Shifter Team
-Author URI: https://github.com/getshifter
+Author URI: https://getshifter.io
 License: GPL2
 */
 
