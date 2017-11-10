@@ -3,7 +3,7 @@
 Plugin Name: Shifter Dashboard Timer
 Plugin URI: https://github.com/getshifter/shifter-dashboard-timer
 Description: Notice before terminating Shifter Container
-Version: 1.1.0
+Version: 1.2.0
 Author: Shifter Team
 Author URI: https://getshifter.io
 License: GPL2
