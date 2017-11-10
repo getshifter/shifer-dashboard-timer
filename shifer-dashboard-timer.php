@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Shifer DashBoard Timer
+Plugin Name: Shifter Dashboard Timer
 Plugin URI:
 Description: Notice before terminate
 Version: 1.1.0
@@ -9,7 +9,7 @@ Author URI: https://github.com/getshifter
 License: GPL2
 */
 
-function notice_shifer_dashboard_timer() {
+function notice_shifter_dashboard_timer() {
   $bootup_filename = '../.bootup';
   $hard_limit = 180;
   if (file_exists($bootup_filename)) {
@@ -29,5 +29,5 @@ Notice: Shifter will power down WordPress in <?php echo $shifter_remain ?> minut
 <?php
 }}
 }
-  add_action( 'admin_notices', 'notice_shifer_dashboard_timer' );
+  add_action( 'admin_notices', 'notice_shifter_dashboard_timer' );
 ?>
