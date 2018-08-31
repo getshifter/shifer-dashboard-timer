@@ -3,7 +3,7 @@
 Plugin Name: Shifter – Dashboard Timer
 Plugin URI: https://github.com/getshifter/shifter-dashboard-timer
 Description: Notice before terminating Shifter Container
-Version: 1.2.1
+Version: 1.2.2
 Author: Shifter Team
 Author URI: https://getshifter.io
 License: GPL2
@@ -14,7 +14,7 @@ function notice_shifter_dashboard_timer() {
   $hard_limit = 180;
   if (file_exists($bootup_filename)) {
   $unixtime = file_get_contents($bootup_filename, true);
-  $shifter_remain = $hard_limit - round((time() - $unixtime) / 60);
+  $shifter_remain = $hard_limit - round((time() - intval($unixtime)) / 60);
   if ( $shifter_remain < 3 ) {
 ?>
 <div class="error"><ul>
